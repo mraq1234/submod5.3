@@ -41,6 +41,7 @@ errorResponse = (error, res) => {
 app.get('/getNote', function(req, res) {
     console.log('Otrzymałem żądanie GET do getNote');
 
+
     readFilePromise('./test.json')
         .then(data => res.send('Zawartość pliku test.json: ' + data))
         .catch(error => errorResponse(error, res))
